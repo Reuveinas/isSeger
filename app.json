@@ -1,0 +1,12 @@
+{
+  "name": "seger",
+  "displayName": "seger",
+  "expo": {
+    "name": "seger",
+    "slug": "seger",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
