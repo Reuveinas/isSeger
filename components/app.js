@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity, Linking } from 'react-native';
-import { ActiveLayout, HappyImage, SadImage, TitleImage, ButtonContainer, ButtonText } from './app.styles';
+import { ActiveLayout, HappyImage, SadImage, TitleImage, ButtonContainer, ButtonText, Space } from './app.styles';
 import {LinearGradient} from 'expo-linear-gradient';
 import React, {Component} from 'react';
 import firebase from 'firebase';
@@ -34,12 +34,11 @@ class App extends Component {
             return <LinearGradient
                 colors={['#27C7CB', '#5FED75', '#EEE415']}
                 style={styles.linearGradient}
-            >
+				>
                 <ActiveLayout>
                     <TitleImage
                         resizeMode='cover' style={[styles.image, {overflow: 'visible'}]}
                         source={require('../resources/no_seger.png')}/>
-                    <HappyImage source={require('../resources/happy.png')}/>
                     <ButtonContainer>
                         <LinearGradient
                             start={{x: 0, y: 0}} end={{x: 1, y: 0}}
@@ -48,10 +47,11 @@ class App extends Component {
                             <TouchableOpacity style={styles.buttonStyles} onPress={() => {
                                 Linking.openURL(url)
                             }}>
-                                <ButtonText> להנחיות נוספות</ButtonText>
+                                <ButtonText> להנחיות מלאות </ButtonText>
                             </TouchableOpacity>
                         </LinearGradient>
                     </ButtonContainer>
+                    <HappyImage source={require('../resources/happy.png')}/>
                 </ActiveLayout>
             </LinearGradient>
         } else {
@@ -64,20 +64,20 @@ class App extends Component {
                     <TitleImage
                         resizeMode='cover' style={[styles.image, {overflow: 'visible'}]}
                         source={require('../resources/is_seger.png')}/>
-                    <SadImage source={require('../resources/sad.png')}/>
-
-                    <ButtonContainer>
+						
+					<ButtonContainer>
                         <LinearGradient
                             start={{x: 0, y: 0}} end={{x: 1, y: 0}}
                             colors={['#F11336', '#F7341D', '#FE5505']}
                             style={styles.buttonLinearGradient}>
-                        <TouchableOpacity style={styles.buttonStyles} nPress={() => {
+                        <TouchableOpacity style={styles.buttonStyles} onPress={() => {
                             Linking.openURL(url)
                         }}>
-                            <ButtonText> להנחיות נוספות</ButtonText>
+                            <ButtonText> להנחיות מלאות </ButtonText>
                         </TouchableOpacity>
                         </LinearGradient>
                     </ButtonContainer>
+                    <SadImage source={require('../resources/sad.png')}/>
                 </ActiveLayout>
             </LinearGradient>
         }
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     linearGradient: {
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 5,
         height: '100%',
         width: '100%',
     },
@@ -104,7 +103,7 @@ const styles = StyleSheet.create({
         height: '80%',
         width: '90%',
         borderColor: 'white',
-        borderWidth: 10
+        borderWidth: 7.5,
     },
     buttonStyles: {
         alignItems: 'center',

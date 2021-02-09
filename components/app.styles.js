@@ -10,10 +10,19 @@ export const ActiveLayout = styled.View`
   //background-color: blue;
 `;
 
+
+export const TitleImage = styled.Image`
+  flex: 0.3;
+  display: flex;
+  //max-width: 80%;
+  //max-height: 40%;
+  margin: 10%;
+  resizeMode: contain;
+`;
+
 export const HappyImage = styled.Image`
 display: flex;
-  flex: 1;
-  height: 70%;
+  flex: 0.6;
   width: 100%;
   justify-content: flex-end;
   align-items: flex-end;
@@ -21,20 +30,16 @@ display: flex;
 
 export const SadImage = styled.Image`
 display: flex;
-  flex: 1;
-  height: 40%;
-  width: 100%;
+  flex: 0.6;
+  //height: 100%;
+  //width: 100%;
+  margin: 10%;
+  marginTop: 30%;
   justify-content: flex-end;
   align-items: flex-end;
+  resizeMode:contain;
 `;
 
-export const TitleImage = styled.Image`
-        flex: 0.4;
-        display: flex;
-  width: 50%;
-  height: 10%;
-  margin-top: 15%;
-`;
 
 export const RulesButton = styled.View`
     height: 10%;
@@ -44,9 +49,27 @@ export const RulesButton = styled.View`
     background-color: red;
 `;
 
+
 export const TextInstructions = styled.Text`
 `;
 
+
+export const ButtonContainer = styled.View`
+display: flex;
+  flex: 0.14;
+  height: 100%;
+  width: 40%;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+        //shadowOpacity: 0.1;
+        //shadowRadius: 8;
+        //shadowColor: 'black';
+        //shadowOffset: { height: 8, width: 15 };
+`;
+
+/*
 export const ButtonContainer = styled.View`
     width: 83%;
     height: 10%;
@@ -57,11 +80,13 @@ export const ButtonContainer = styled.View`
     justify-content: center;
     align-items: center;
 `;
+*/
 
 export const ButtonTextContainer = styled.View`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     border-radius: 36px;
     background-color: #ffee58;
     ${({ isActive }) =>
@@ -76,6 +101,7 @@ export const ButtonTextContainer = styled.View`
 `;
 
 export const ButtonText = styled.Text`
-    font-size: 26px;
+    font-size: 12px;
     color: white;
+	font-weight: bold;
 `;
