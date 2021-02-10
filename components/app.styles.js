@@ -12,11 +12,12 @@ export const ActiveLayout = styled.View`
 
 
 export const TitleImage = styled.Image`
-  flex: 0.3;
+  flex: 0.7;
   display: flex;
-  //max-width: 80%;
+  max-width: 80%;
   //max-height: 40%;
   margin: 10%;
+  marginBottom: 5%;
   resizeMode: contain;
 `;
 
@@ -30,15 +31,27 @@ display: flex;
 
 export const SadImage = styled.Image`
 display: flex;
-  flex: 0.6;
+  flex: 0.4;
   //height: 100%;
   //width: 100%;
   margin: 10%;
-  marginTop: 30%;
+  marginTop: 20%;
   justify-content: flex-end;
   align-items: flex-end;
   resizeMode:contain;
 `;
+
+export const SplashImage = styled.Image`
+display: flex;
+  flex: 1;
+  //height: 100%;
+  //width: 100%;
+  margin: 50%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  resizeMode:contain;
+`;
+
 
 
 export const RulesButton = styled.View`

@@ -1,8 +1,9 @@
 import { StyleSheet, TouchableOpacity, Linking } from 'react-native';
-import { ActiveLayout, HappyImage, SadImage, TitleImage, ButtonContainer, ButtonText, Space } from './app.styles';
+import { ActiveLayout, HappyImage, SadImage, TitleImage, ButtonContainer, ButtonText, SplashImage } from './app.styles';
 import {LinearGradient} from 'expo-linear-gradient';
 import React, {Component} from 'react';
 import firebase from 'firebase';
+import { StatusBar } from 'react-native';
 
 class App extends Component {
     constructor() {
@@ -14,6 +15,8 @@ class App extends Component {
     }
 
     componentDidMount() {
+		StatusBar.setHidden(false);
+
         const key = firebase.database().ref('isSeger/');
         key.once("value").then((result) => {
             this.setState({isSeger: result.val()});
@@ -26,10 +29,15 @@ class App extends Component {
     }
 
     render() {
-        const {isSeger, url} = this.state;
+		StatusBar.setBackgroundColor('#00000000'); 
+		StatusBar.setTranslucent(true)
+		
+		const {isSeger, url} = this.state;
         console.log('isSeger', isSeger);
         if (isSeger === null) {
-            return null
+            return <ActiveLayout>
+				<SplashImage source={require('../resources/icon.png')}/>
+			</ActiveLayout>
         } else if (isSeger == 0) {
             return <LinearGradient
                 colors={['#27C7CB', '#5FED75', '#EEE415']}
